@@ -99,11 +99,6 @@ def question_answering_demo(args):
     "When is MarsFAST scheduled to be launched?",
     "When is MarsFAST expected to arrive?", "What is the aim of MarsFast?","How much does the MarsFAST rover weigh?","What is SPICA?","How far is the moon from the Earth?"]
 
-    if st.button('Click to open demo video'):
-        video_file = open('./video.webm', 'rb')
-        video_bytes = video_file.read()
-        st.video(video_bytes)
-
     option = st.selectbox(
     "Choose a question below:",
      questions)
@@ -135,7 +130,7 @@ def question_answering_demo(args):
         st.write("""
         **Prompt:** %s...
         """ % random_paragraph[0].replace("1.1 Background ",'')[:300])
-
+    st.markdown('[Demo Video](https://esatde.expertcustomers.ai/SpaceQA/media/80d64656b1c212992e5c0e9d700ddf983f9ee47034c1b23d8d49a404.mp4)', unsafe_allow_html=True)
 def about():
     print_title("About")
     st.write("""
@@ -147,6 +142,12 @@ def about():
     If you have any doubt or suggestion, please send it to [Cristian](mailto:cberrio@expert.ai), [Andrés](mailto:agarcia@expert.ai) or [Jose](mailto:jmgomez@expert.ai).
     """)
 
+def video():
+    print_title("Video")
+    video_file = open('./video.webm', 'rb')
+    video_bytes = video_file.read()
+    st.video(video_bytes)
+
 def run_app(args, session_state=None):
     global es
     es = Elasticsearch(args.elasticsearch,verify_certs=False)
@@ -157,19 +158,20 @@ def run_app(args, session_state=None):
             </style>
             """
     st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
-
     menu_opts = {
         1: "SpaceQA",
-        2: "About"
+        2: "Video",
+        3: "About"
     }
 
     menu_box = st.sidebar.selectbox('MENU', (
         menu_opts[1],
-        menu_opts[2]
+        menu_opts[2],
+        menu_opts[3]
     ))
-
     if menu_box == menu_opts[1]:
         question_answering_demo(args)
-
     if menu_box == menu_opts[2]:
+        video()
+    if menu_box == menu_opts[3]:
         about()
