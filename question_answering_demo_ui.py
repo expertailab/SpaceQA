@@ -61,6 +61,7 @@ def print_answer(answer):
     st.write("**Context:** " + answer['context'][:answer['start']]+
         "**<span style='color:rgb(255, 255, 255);background-color:rgba(0, 120, 0, 1)'>"+answer['context'][answer['start']:answer['end']]+'</span>**'+
         answer['context'][answer['end']:], unsafe_allow_html=True)
+    st.write("**Document:** %s" % (answer['document']))
     st.write("**Score:** " + str(round(answer['score'],2)))
 
 def run_answerquestion(args, doc, filter_document):
@@ -97,6 +98,11 @@ def question_answering_demo(args):
     questions = ["", "What is Athena's orbit?",
     "When is MarsFAST scheduled to be launched?",
     "When is MarsFAST expected to arrive?", "What is the aim of MarsFast?","How much does the MarsFAST rover weigh?","What is SPICA?","How far is the moon from the Earth?"]
+
+    if st.button('Click to open demo video'):
+        video_file = open('./video.webm', 'rb')
+        video_bytes = video_file.read()
+        st.video(video_bytes)
 
     option = st.selectbox(
     "Choose a question below:",
