@@ -6,7 +6,7 @@ The question answering module is able to answer 'WH questions' (What, When, Wher
 ## Requirements:
 * [Anaconda](https://docs.anaconda.com/anaconda/install/index.html)
 
-## Instalation:
+## Installation:
 Create a new conda environment:
 ```bash
 conda create -n spaceqa python=3.8
