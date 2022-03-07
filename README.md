@@ -11,8 +11,8 @@ Create a new conda environment:
 ```bash
 conda create -n spaceqa python=3.8
 conda activate spaceqa
-pip install -r requirements.txt
 cd SpaceQA
+pip install -r requirements.txt
 streamlit run run_question_answering.py
 ```
 
