@@ -13,7 +13,6 @@ conda create -n spaceqa python=3.8
 conda activate spaceqa
 cd SpaceQA
 pip install -r requirements.txt
-streamlit run run_question_answering.py
 ```
 
 ## Execution
