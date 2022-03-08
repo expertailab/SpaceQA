@@ -20,8 +20,8 @@ pip install -r requirements.txt
 streamlit run run_question_answering.py -- --question_answering_endpoint=$QUESTION_ANSWERING_ENDPOINT --colbert_retriever_endpoint=$COLBERT_RETRIEVER_ENDPOINT  --elasticsearch=$ELASTICSEARCH_ENDPOINT
 ```
 
-## Question Answering and Retriever Modules
-### Requirements:
+### Question Answering and Retriever Modules
+#### Requirements:
 * Java JDK 11
 
 Create a new conda environment:
@@ -49,7 +49,7 @@ By default the endpoints will be:
 * http://localhost:8080/get_contexts, retriever endpoint which receives a question and returns the context to answer the question
 * http://localhost:8080/answer_question, question answering endpoint which receive a question and a list of contexts, and returns the answer for each context.
 
-## Elasticsearch Module
+### Elasticsearch Module
 We have an [Elasticsearch](https://www.elastic.co/elasticsearch/) with two indices: "paragraph" and "document". These are the mappings of the paragraph index :
 ```json
 "mappings":{"properties":{"document":{"type":"keyword"},"faiss_id":{"type":"integer"},"is_suggestion":{"type":"boolean"},"text":{"type":"text","fields":{"keyword":{"type":"keyword"}}}}
