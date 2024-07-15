@@ -59,3 +59,27 @@ And the mappings of the "document" index:
 "mappings":{"properties":{"name":{"type":"text","fields":{"keyword":{"type":"keyword","ignore_above":256}}}}
 ```
 Note that there must be a direct correspondence between the "faiss_id" and the vector id in the colbertindex.
+
+How to cite
+-----------
+
+To cite this research please use the following::
+```
+@inproceedings{10.1145/3477495.3531697,
+  author = {Garcia-Silva, Andres and Berrio, Cristian and Gomez-Perez, Jose Manuel and Mart\'{\i}nez-Heras, Jose Antonio and Donati, Alessandro and Roma, Ilaria},
+  title = {SpaceQA: Answering Questions about the Design of Space Missions and Space Craft Concepts},
+  year = {2022},
+  isbn = {9781450387323},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3477495.3531697},
+  doi = {10.1145/3477495.3531697},
+  abstract = {We present SpaceQA, to the best of our knowledge the first open-domain QA system in Space mission design. SpaceQA is part of an initiative by the European Space Agency (ESA) to facilitate the access, sharing and reuse of information about Space mission design within the agency and with the public. We adopt a state-of-the-art architecture consisting of a dense retriever and a neural reader and opt for an approach based on transfer learning rather than fine-tuning due to the lack of domain-specific annotated data. Our evaluation on a test set produced by ESA is largely consistent with the results originally reported by the evaluated retrievers and confirms the need of fine tuning for reading comprehension. As of writing this paper, ESA is piloting SpaceQA internally.},
+  booktitle = {Proceedings of the 45th International ACM SIGIR Conference on Research and Development in Information Retrieval},
+  pages = {3306–3311},
+  numpages = {6},
+  keywords = {space mission design, reading comprehension, open-domain question answering, neural networks, language models, dense retrievers},
+  location = {Madrid, Spain},
+  series = {SIGIR '22}
+}
+```
